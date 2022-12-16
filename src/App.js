@@ -1,28 +1,25 @@
-import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Route,
+  createRoutesFromElements,
+  RouterProvider
+} from 'react-router-dom';
+import RootLayout from './layouts/RootLayout';
+
 import About from './pages/About';
 import Home from './pages/Home';
 
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<RootLayout />}>
+      <Route path='/' element={<Home />} />
+      <Route path='about' element={<About />} />
+    </Route>
+  )
+);
+
 function App() {
-  return (
-    <div className='App'>
-      <BrowserRouter>
-        <header>
-          <nav>
-            <h1>PR-Router</h1>
-            <NavLink to='/'>Home</NavLink>
-            <NavLink to='about'>About</NavLink>
-          </nav>
-        </header>
-        <main>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='about' element={<About />} />
-            {/* /about  / not necessary*/}
-          </Routes>
-        </main>
-      </BrowserRouter>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
