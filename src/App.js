@@ -20,6 +20,7 @@ import Careers, { careersLoader } from './pages/careers/Careers';
 import CareerDetails, {
   CareerDetailsLoader
 } from './pages/careers/CareerDetails';
+import CareersError from './pages/careers/CareersError';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +31,11 @@ const router = createBrowserRouter(
         <Route path='faq' element={<Faq />} />
         <Route path='contact' element={<Contact />} /> {/*help/contact */}
       </Route>
-      <Route path='careers' element={<CareersLayout />}>
+      <Route
+        path='careers'
+        element={<CareersLayout />}
+        errorElement={<CareersError />}
+      >
         <Route index element={<Careers />} loader={careersLoader} />
         <Route
           path=':id'
