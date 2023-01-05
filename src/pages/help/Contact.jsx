@@ -22,16 +22,18 @@ const Contact = () => {
 };
 
 export default Contact;
-console.log(request);
+
 
 
 export const contactAction = async ({ request }) => {
     console.log(request);
     const data = await request.formData();
-    const submission = {
-        email: data.get('email'),
-        message: data.get('message')
+    const submission = { //object
+        email: data.get('email'), //name attribute of forms and get the value
+        message: data.get('message')//name attribute of forms and get the value
     };
+
+
     console.log(submission);
 
     //send post request

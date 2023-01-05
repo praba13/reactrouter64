@@ -29,10 +29,7 @@ const router = createBrowserRouter(
       <Route path='about' element={<About />} />
       <Route path='help' element={<HelpLayout />}>
         <Route path='faq' element={<Faq />} />
-        <Route
-          path='contact'
-          element={<Contact action={contactAction} />}
-        />{' '}
+        <Route path='contact' element={<Contact />} action={contactAction} />
         {/*help/contact */}
       </Route>
       <Route
