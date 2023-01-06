@@ -27,4 +27,4 @@ export const careersLoader = async () => {
     return res.json();
 };
 
-export default Careers;;;
+export default Careers;

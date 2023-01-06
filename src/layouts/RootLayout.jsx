@@ -1,9 +1,10 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, ScrollRestoration } from 'react-router-dom';
 import Breadcrumbs from '../components/Breadcrumbs';
 
 const RootLayout = () => {
   return (
     <div className='root-layout'>
+      <ScrollRestoration />
       <header>
         <nav>
           <h1>PR-Router</h1>
